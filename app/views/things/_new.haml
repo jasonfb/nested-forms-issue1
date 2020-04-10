@@ -1,0 +1,5 @@
+New Thing
+
+= form_with model: @thing,  method: "post" do  |f|
+  = render partial: "things/form", locals: {f: f}
+  = f.submit "Save", class: "btn btn-primary"

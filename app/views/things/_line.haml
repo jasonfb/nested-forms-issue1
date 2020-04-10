@@ -1,0 +1,13 @@
+%td
+  = thing.name
+%td
+  %strong Name
+  = thing.name
+  %br/
+  %strong Color
+  = thing.color
+  %br/
+
+
+%td
+  = link_to "Edit ", edit_thing_path(thing), remote: true, class: "edit-thing-button btn btn-primary pull-right btn-sm"

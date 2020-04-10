@@ -1,0 +1,3 @@
+
+
+$(".things-table tr[data-id=<%= @thing.id %>]").html("<%= j render partial: 'things/edit', locals: {thing: @thing} %>")

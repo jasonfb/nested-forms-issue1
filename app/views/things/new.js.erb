@@ -1,0 +1,4 @@
+
+$(".new-thing-button").fadeOut(function() {
+  $(".new-thing-form").html("<%= j render(partial: 'things/new' ) %><i class='fa fa-times-circle fa-2x' data-name='new-thing' data-role='close-button' />").slideDown();
+})

@@ -1,0 +1,22 @@
+%h1
+  Your Things
+
+= link_to "New Thing", new_thing_path, 'data-disable-with': "Loading...", remote: true, class: "new-thing-button btn btn-secondary pull-right btn-sm"
+
+.clearfix
+.new-thing-form{style: "display: none; position: relative;"}
+
+%table.table.table-striped.things-table
+  %thead
+    %tr
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Color
+      %th{:scope => "col"}
+
+  %tbody
+    - if things.empty?
+      None
+    - things.each do |thing|
+      %tr{'data-id': thing.id}
+        = render partial: "things/line", locals: {thing: thing}
+

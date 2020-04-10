@@ -1,0 +1,14 @@
+
+
+<% if @thing.errors.none? %>
+location.reload()
+//$(".new-thing-form").slideUp();
+//$(".things-list").html("<%= j render(partial: 'things/list', locals: {things: Thing.all }) %>");
+
+
+<% else %>
+$(".new-thing-form").html("<%= j render(partial: 'things/errors', locals: {resource: @thing}) %>")
+$(".new-thing-form").append("<%= j render(partial: 'things/new' ) %><i class='fa fa-times-circle fa-2x' data-name='new-thing' data-role='close-button' />").slideDown();
+
+$(".flash-notices").html("<%= j render 'layouts/flash_notices' %>");
+<% end %>

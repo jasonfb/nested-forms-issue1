@@ -1,0 +1,9 @@
+
+Editing
+= @thing.name
+%br/
+
+= form_for @thing, remote: true  do  |f|
+ = render partial: "things/form", locals: {f: f, thing: @thing}
+ = f.submit "Save", class: "btn btn-primary"
+
